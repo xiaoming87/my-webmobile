@@ -1,0 +1,74 @@
+<div class="container">
+    <h1>Firebase Demo</h1>
+
+    <ul>
+        <li ng-repeat="data in firebaseDemo" style="margin-top: 5px;">
+            <!-- edit a message -->
+            <input ng-model="data.name" ng-change="firebaseDemo.$save(data)" />
+            <!-- delete a message -->
+            <button ng-click="data.$remove(data)" class="btn btn-danger">Delete Name</button>
+        </li>
+    </ul>
+    
+    <!-- push a new message onto the array -->
+    <form ng-submit="addData(newData)" class="form-inline">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input ng-model="newData.name" type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input ng-model="newData.email" type="email" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <input ng-model="newData.gender" type="text" class="form-control" id="gender" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input ng-model="newData.age" type="integer" class="form-control" id="age" required>
+        </div>
+            
+        <div style="margin-top:10px;">
+            <button class="btn btn-primary btn-block btn-lg" type="submit">Add Data</button>
+        </div>
+    </form>
+    
+    
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in firebaseDemo">
+                    <td>{{ data.name }} </td>
+                    <td>{{ data.email }} </td>
+                    <td>{{ data.gender }} </td>
+                    <td>{{ data.age }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Facebook -->
+    <hr>
+    
+    <button ng-click="facebookAuth()" class="btn btn-social btn-facebook">
+        <span class="fa fa-facebook"></span>
+         Sign in with Facebook
+    </button>
+    
+    <h3>Facebook Data</h3>
+    
+    <pre>{{ facebookData | json:4 }}</pre>
+    
+    <h3>Facebook Auth Data</h3>
+    
+    <pre>{{ facebookAuthData | json:4 }}</pre>
+</div>

@@ -1,0 +1,50 @@
+$primary-color: red;
+$main-bg-color: #E6E6E6;
+$text-large: 20px;
+$header-bg: #18bc9c;
+$nav-bg: #0B243B !important;
+$footer-bg: #0B243B !important;
+
+$wrapper-margin-top: 70px;
+$wrapper-sm-margin-top: 40px;
+
+// $header-bg: url(http://blackrockdigital.github.io/startbootstrap-landing-page/img/intro-bg.jpg) no-repeat center;
+
+// h1 {
+//     color: $primary-color;
+// }
+
+.text-large {
+    font-size: $text-large;
+}
+
+// body {
+//     background-color: $main-bg-color;
+// }
+
+.no-margin {
+    margin: 0px;
+}
+.no-padding {
+    padding: 0px;
+}
+
+header {
+    background: $header-bg;
+}
+
+nav {
+    background: $nav-bg;
+}
+
+.wrapper {
+    margin-top: $wrapper-sm-margin-top;
+}
+
+
+@media (min-width: 768px) {
+   .wrapper {
+        margin-top: $wrapper-margin-top;
+    } 
+}
+
